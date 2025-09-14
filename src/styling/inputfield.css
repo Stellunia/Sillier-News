@@ -1,0 +1,77 @@
+.submit-page-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.submit-page-field {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.submit-page-field form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: fit-content;
+    background-color: var(--alt-background);
+    border-radius: 1rem;
+    margin-top: 2rem;
+}
+
+.submit-page-title {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+.submit-page-title label {
+    display: flex;
+    
+}
+
+.submit-page-title input {
+    width: 80%;
+    align-self: flex-start;
+    border-radius: 0.5rem;
+    border: 2px solid var(--secondary);
+}
+
+.submit-page-author {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    width: 80%;
+}
+
+.submit-page-author label {
+    display: flex;
+}
+
+.submit-page-author input {
+    width: 80%;
+    align-self: flex-start;
+    border-radius: 0.5rem;
+    border: 2px solid var(--secondary);
+}
+
+.submit-page-content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    
+}
+
+.submit-page-content label {
+    display: flex;
+}
+
+.submit-page-content textarea {
+    display: flex;
+    width: 50rem;
+    resize: vertical;
+    border-radius: 1rem;
+    border: 2px solid var(--secondary);
+}

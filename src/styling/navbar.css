@@ -1,0 +1,95 @@
+.navigationbar {
+    display: flex;
+    width: fit-content;
+    color: white;
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+    font-family: 'Lucida Sans Regular', Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    overflow: hidden;
+    border: 4px solid var(--secondary);
+    text-shadow: 2px 2px 4px var(--text-shading);
+    justify-content: center;
+    border-radius: 3rem;
+    list-style-type: none;
+}
+
+.first-button {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    transition: background-color 0.75s;
+    background-color: var(--background);
+    border-top-left-radius: 3rem;
+    border-bottom-left-radius: 3rem;
+}
+
+.first-button:hover {
+    background-color: var(--button-hover);
+    color: var(--alt-background);
+    border-top-left-radius: 3rem;
+    border-bottom-left-radius: 3rem;
+}
+
+.first-button:active {
+    color: var(--button);
+    background-color: var(--button-click);
+    text-decoration: none;
+    border-top-left-radius: 3rem;
+    border-bottom-left-radius: 3rem;
+}
+
+.last-button {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    transition: background-color 0.75s;
+    background-color: var(--background);
+    border-top-right-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+}
+
+.last-button:hover {
+    background-color: var(--button-hover);
+    color: var(--alt-background);
+    border-top-right-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+}
+
+.last-button:active {
+    color: var(--button);
+    background-color: var(--button-click);
+    text-decoration: none;
+    border-top-right-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+}
+
+.navlist {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: var(--primary);
+}
+
+.navlist li a {
+    display: flex;
+    color: white;
+    text-align: center;
+    padding: 0 20px;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: bold;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 4px;
+}

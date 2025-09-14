@@ -1,0 +1,35 @@
+#root {
+    max-width: 1280px;
+    min-width: fit-content;
+    margin: 0 auto;
+    padding: 2rem;
+    padding-bottom: 0;
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+
+    /*    
+    --text: #F2E2D2;
+    --background: #1D201F;
+    --primary: #56CBF9;
+    --secondary: #FF729F;
+    --accent: #416788;
+    Light Red: #F05D5E
+    Dark Purple: #65334D
+    Pale Purple: #5a4761 
+    Orange: #E9724C
+    Celtic Blue: #276FBF
+    Dark Maroon: #450920
+    Hot Pink: #a53860
+    --text: #dedbd2
+    --background: #4a5759
+    --primary: #edafb8
+    --secondary: #f7e1d7
+    --accent: #b0c4b1
+    */
+    --text: #F2E2D2;
+    --background: #1D201F;
+    --primary: #edafb8;
+    --secondary: #a53860;
+    --accent:#65334D;
+}

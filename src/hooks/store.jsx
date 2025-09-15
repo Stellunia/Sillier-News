@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react"
+import { createContext, useContext, useEffect, useState } from "react"
 import { loadNews, removeNews } from "../localStorageUtil"
+const StoreContext = createContext(null)
 
-export function useStore() {
+export function StoreProvider({children}) {
     const [news, setNews ] = useState([])
     const [apiNews, setApiNews ] = useState([])
 
@@ -17,5 +18,10 @@ export function useStore() {
         const newsLoaded = loadNews()
         setNews(newsLoaded)
     }, [])
-    return {news, apiNews, deleteArticle}
+
+    return ( <StoreContext.Provider value={{news, apiNews, deleteArticle}}>{children}</StoreContext.Provider>)
 }
+
+export function useStore() {
+    return useContext(StoreContext)
+ }

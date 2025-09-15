@@ -11,6 +11,7 @@ import { Navbar } from "./components/Nav";
 import { NewsPage } from "./pages/NewsPage";
 import { SubmitPage } from "./pages/SubmitNews";
 import { saveNews, loadNews } from "./localStorageUtil";
+import { StoreProvider } from './hooks/store';
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
 
   return (
 	<BrowserRouter>
-		  <>
+		  <StoreProvider>
 			  <div id="sillier-news">
 				  <Header />
 				  <Navbar>
@@ -35,7 +36,7 @@ function App() {
 			  </div>
 			  <Footer />
 			  <ToastContainer/>
-		  </>
+		  </StoreProvider>
 	</BrowserRouter>
   )
 }

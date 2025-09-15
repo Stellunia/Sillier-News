@@ -1,4 +1,4 @@
-import { useStore } from "../hooks/useStore"
+import { useStore } from "../hooks/store"
 import { Button } from "./Button"
 
 export function Article({ title, image, author, date, content, id }) {

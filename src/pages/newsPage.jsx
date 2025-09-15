@@ -1,7 +1,7 @@
 import { useState } from "react";
 //import { NewsAPI } from "../components/NewsAPI";
 import { Article } from "../components/Article";
-import { useStore } from "../hooks/useStore";
+import { useStore } from "../hooks/store";
 import "../styling/newsPage.css";
 
 

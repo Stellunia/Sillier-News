@@ -8,18 +8,10 @@ import { Footer } from "./components/Footer";
 import { Hero } from "./components/Hero";
 import { Navbar } from "./components/Nav";
 
-import { NewsPage } from "./pages/newsPage";
+import { NewsPage } from "./pages/NewsPage";
 import { SubmitPage } from "./pages/SubmitNews";
 import { saveNews, loadNews } from "./localStorageUtil";
 
-
-	function newsPage() {
-		return <h1>News Page</h1>
-	}
-
-	function submitPage() {
-		return <h1>Submit Page</h1>
-	}
 
 function App() {
   
@@ -27,7 +19,8 @@ function App() {
 
   	useEffect(() => {
 		setNews(loadNews());
-	}, []);
+		return () => {}
+	}, [setNews, loadNews]);
 
 	const addNews = (newNews) => {
 		const updated = [...news, newNews]

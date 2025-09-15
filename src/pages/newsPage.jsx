@@ -1,6 +1,6 @@
 import { useState } from "react";
 //import { NewsAPI } from "../components/NewsAPI";
-import { NewsFormat } from "../components/Article";
+import { Article } from "../components/Article";
 import { useStore } from "../hooks/useStore";
 import "../styling/newsPage.css";
 
@@ -30,7 +30,7 @@ export function NewsPage({}) {
 				<h1>User Submitted News</h1>
 				<section className="news-column">
 						{news.map(p => (
-							<NewsFormat title={p.title} author={p.author} date={p.date} content={p.content} key={p.id} />
+							<Article title={p.title} author={p.author} date={p.date} content={p.content} id={p.id} key={p.id} />
 						))}
 				</section>
 			</section>

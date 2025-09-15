@@ -1,5 +1,8 @@
-export function NewsFormat({ title, image, author, date, content }) {
+import { useStore } from "../hooks/useStore"
+import { Button } from "./Button"
 
+export function Article({ title, image, author, date, content, id }) {
+    const { deleteArticle } = useStore()
     function parseDate(date) {
         const dateStr = new Date(date).toLocaleDateString("sv-SE")
         return dateStr
@@ -9,15 +12,9 @@ export function NewsFormat({ title, image, author, date, content }) {
         <div className="news-content">
             <div style={{ display: "flex", 
                 justifyContent: "space-between",
-                width: "100%",
-                marginLeft: "2rem",
-                marginRight: "2rem"}}>
-                <div className="article-headline">{title}</div>
-                <button style={{ width: 5, 
-                    height: 20, 
-                    backgroundColor: "#edafb8", 
-                    borderRadius: "2rem",
-                    border: "5px solid #a53860"}}></button>
+                width: "100%"}}>
+                <div className="article-headline" style={{ marginLeft: "2rem"}}>{title}</div>
+                <Button label={"Delete"} onClick={() => deleteArticle(id)}/>
             </div>
             <div className="article-image">{image}</div>
             <div className="article-author">{author}</div>

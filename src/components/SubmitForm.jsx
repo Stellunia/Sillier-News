@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { saveNews } from "../localStorageUtil";
 import "../styling/submitform.css";
+import { toast } from "react-toastify";
 
-export function SubmitForm({ addNews }) {
+export function SubmitForm({ addNews }) {	
 	const [formData, setFormData] = useState({
 		title: "",
 		author: "",
@@ -32,6 +33,7 @@ export function SubmitForm({ addNews }) {
 		};
 
 		addNews(newNews);
+		toast("Get silly");
 		setFormData({
 			title: "",
 			author: "",

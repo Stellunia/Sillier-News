@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { Hero } from "../components/Hero";
 //import { NewsAPI } from "../components/NewsAPI";
-import { NewsFormat } from "../components/NewsFormat";
+import { NewsFormat } from "../components/Article";
 import { useStore } from "../hooks/useStore";
 import "../styling/newsPage.css";
 

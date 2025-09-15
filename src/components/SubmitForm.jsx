@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { saveNews } from "../localStorageUtil";
-import "../styling/inputfield.css";
+import "../styling/submitform.css";
 
-export function InputField({ changePage, addNews }) {
+export function SubmitForm({ addNews }) {
 	const [formData, setFormData] = useState({
 		title: "",
 		author: "",
@@ -28,7 +28,7 @@ export function InputField({ changePage, addNews }) {
 		const newNews = {
 			...formData,
 			id: Math.floor(Math.random() * 100000),
-			createdAt: new Date(Date.now()).toLocaleString("sv-SE").slice(0, 10),
+			date: new Date(Date.now()).toLocaleString("sv-SE").slice(0, 10),
 		};
 
 		addNews(newNews);
@@ -59,10 +59,9 @@ export function InputField({ changePage, addNews }) {
 						onChange={handleChange}
 					/>
 				</div>
-
 				<div className="submit-page-content">
 					<label htmlFor="content">Content</label>
-					<textarea 
+					<textarea
 						name="content"
 						id="content"
 						value={formData.content}
@@ -71,7 +70,7 @@ export function InputField({ changePage, addNews }) {
 					>
 					</textarea>
 				</div>
-				<button type="submit">submit</button>
+				<button type="submit">Submit</button>
 			</form>
 		</div>
 	);

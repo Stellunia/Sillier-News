@@ -36,7 +36,7 @@
     margin-right: 2rem;
     margin-bottom: 2rem;
     width: 250px;
-    height: 300px;
+    height: fit-content;
     background-color: var(--background);
     border-radius: 2rem;
     border: 5px solid var(--secondary);
@@ -51,12 +51,14 @@
 }
 
 .article-headline {
+    display: flex;
     font-size: large;
 }
 
 .article-image {
-    width: 90%;
-    height: 100%;
+    display: flex;
+    width: 230px;
+    height: 150px;
     border-radius: 1rem;
     background-color: var(--background);
     border: 2px solid var(--secondary)
@@ -75,4 +77,6 @@
 .article-content {
     display: flex;
     font-size: large;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

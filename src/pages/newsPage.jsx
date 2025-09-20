@@ -1,11 +1,48 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 //import { NewsAPI } from "../components/NewsAPI";
 import { Article } from "../components/Article";
 import { useStore } from "../hooks/store";
 import "../styling/newsPage.css";
+import { apiGetNews, apiGetPlaceholderImage, apiGetDateForNews, apiGetAuthorForNews } from "../api/NewsAPI";
+import { NewsAPIGrid } from "../components/NewsAPIGrid.jsx";
 
 
 export function NewsPage({}) {
+
+	const [newsApiArticles, setArticles] = useState([]);
+
+	// Calls all shenanigans to put together the API article
+	// Fetches the posts' title to put into headline, image placeholders, firstName and lastName into authors
+	// and lastly birthdate of users to put as the date of the article (many old articles, yippiee)
+	useEffect(() => {
+		(async function fetchData() {
+			const news = await apiGetNews();
+			const authors = await apiGetAuthorForNews();
+			const date = await apiGetDateForNews();
+
+			const authorNames = authors.users.map(user => 
+				`${user.firstName} ${user.lastName}`
+			);
+
+			const birthDates = date.users.map(user => {
+				return new Date(user.birthDate).toLocaleDateString('se-SV', {
+					year: 'numeric',
+					month: 'long',
+					day: 'numeric'
+				});
+			});
+
+			const imagePromises = news.map(() => apiGetPlaceholderImage());
+			const images = await Promise.all(imagePromises);
+
+			const articles = news.map((article, index) => ({...article,
+				date: birthDates [index % birthDates.length], 	
+				author: authorNames[index % authorNames.length], 
+				image: images[index]}))
+
+			setArticles(articles)
+		})()
+	}, []);
 
 	const {news} = useStore()
 
@@ -14,16 +51,9 @@ export function NewsPage({}) {
 			<section className="api-news-section">
 				<h1>DummyJSON News</h1>
 				<section className="news-column">
-					<div className="news-content">
-						<div className="article-headline">Headline</div>
-						<div className="article-image"></div>
-						<div className="article-author">Author</div>
-						<div className="article-date">12-12-2012</div>
-						<div className="article-content">Content of the article is contained here and will be presented as thus</div>
-					</div>
-					<div className="api-news-content"></div>
-					<div className="api-news-content"></div>
-					<div className="api-news-content"></div>
+        			<NewsAPIGrid
+          				maxArticles={12} 
+						allArticles={newsApiArticles}/>
 				</section>
 			</section>
 			<section className="user-news-section">

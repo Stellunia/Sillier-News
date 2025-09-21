@@ -1,6 +1,7 @@
 import { useStore } from "../hooks/store"
 import { Button } from "./Button"
 
+// Handles the format of the user submitted article, seperate from the way the NewsAPIForm is laid out
 export function Article({ title, image, author, date, content, id }) {
     const { deleteArticle } = useStore()
     function parseDate(date) {

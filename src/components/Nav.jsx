@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router"
 import "../styling/navbar.css"
 
+// Navbar navigation and routing
 export function Navbar({ changePage }) {
   let navigate = useNavigate();
   return (

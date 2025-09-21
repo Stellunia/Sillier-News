@@ -3,6 +3,8 @@ import { saveNews } from "../localStorageUtil";
 import "../styling/submitform.css";
 import { toast } from "react-toastify";
 
+
+// This is the form for submitting articles to the newspage via user input
 export function SubmitForm({ addNews }) {	
 	const [formData, setFormData] = useState({
 		title: "",
@@ -33,7 +35,7 @@ export function SubmitForm({ addNews }) {
 		};
 
 		addNews(newNews);
-		toast("Get silly");
+		toast("Get silly"); // TOAST NOTIFICATION UPON SUCCESSFUL SUBMISSION
 		setFormData({
 			title: "",
 			author: "",

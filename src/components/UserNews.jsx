@@ -2,6 +2,7 @@
 
 const newss = []; {}
 
+// Handles the mapping of user submitted articles
 export function UserNews() {
     return (
         <div>

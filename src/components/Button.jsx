@@ -1,4 +1,5 @@
 
+// The button that is used for the user submitted articles to enable a form of deletion
 export function Button({ label, onClick, icon }) {
 
     return (<button style={{

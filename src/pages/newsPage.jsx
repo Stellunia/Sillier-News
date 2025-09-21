@@ -6,7 +6,8 @@ import "../styling/newsPage.css";
 import { apiGetNews, apiGetPlaceholderImage, apiGetDateForNews, apiGetAuthorForNews } from "../api/NewsAPI";
 import { NewsAPIGrid } from "../components/NewsAPIGrid.jsx";
 
-
+// THIS HANDLES THE MAIN NEWSPAGE, IT'S A BIT PEDANTIC WHEN MAKING AN ARTICLE - 
+// - IN THE SENSE THAT IT DOESN'T UPDATE THE LOCALSTORAGE UNTIL YOU REFRESH THE PAGE
 export function NewsPage({}) {
 
 	const [newsApiArticles, setArticles] = useState([]);

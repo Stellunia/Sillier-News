@@ -3,6 +3,8 @@ import { loadNews, saveNews } from "../localStorageUtil";
 import { useState } from "react";
 import { useEffect } from "react";
 
+// Handles the submitting of articles and updates the localstorage with the addition of the new article
+// Requires refreshing upon submission, missing something
 export function SubmitPage() {
 
     const [news, setNews] = useState([]);

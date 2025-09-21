@@ -1,5 +1,6 @@
 export function NewsAPIForm({ article }) {
 
+    // How the article should be presented in the website
     return (
         <div className="news-content">
             <div className="article-headline" style={{ padding: "0.5rem" }}>{article.title}</div>
